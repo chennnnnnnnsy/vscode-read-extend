@@ -1,29 +1,63 @@
 {
-  "name": "read-extend",
-  "displayName": "Read Extend",
-  "description": "Read epub/txt books in VSCode status bar",
+  "name": "STTO",
+  "displayName": "STTO",
+  "description": "Study Tool",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onStartupFinished"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      { "command": "readExtend.importBook", "title": "Read Extend: Import Book" },
-      { "command": "readExtend.switchBook", "title": "Read Extend: Switch Book" },
-      { "command": "readExtend.removeBook", "title": "Read Extend: Remove Book" },
-      { "command": "readExtend.nextPage", "title": "Read Extend: Next Page" },
-      { "command": "readExtend.prevPage", "title": "Read Extend: Previous Page" },
-      { "command": "readExtend.toggleVisibility", "title": "Read Extend: Toggle Visibility" },
-      { "command": "readExtend.goToChapter", "title": "Read Extend: Go to Chapter" },
-      { "command": "readExtend.search", "title": "Read Extend: Search" },
-      { "command": "readExtend.searchNext", "title": "Read Extend: Search Next" },
-      { "command": "readExtend.searchPrev", "title": "Read Extend: Search Previous" }
+      {
+        "command": "readExtend.importBook",
+        "title": "STTO: Import Book"
+      },
+      {
+        "command": "readExtend.switchBook",
+        "title": "STTO: Switch Book"
+      },
+      {
+        "command": "readExtend.removeBook",
+        "title": "STTO: Remove Book"
+      },
+      {
+        "command": "readExtend.nextPage",
+        "title": "STTO: Next Page"
+      },
+      {
+        "command": "readExtend.prevPage",
+        "title": "STTO: Previous Page"
+      },
+      {
+        "command": "readExtend.toggleVisibility",
+        "title": "STTO: Toggle Visibility"
+      },
+      {
+        "command": "readExtend.goToChapter",
+        "title": "STTO: Go to Chapter"
+      },
+      {
+        "command": "readExtend.search",
+        "title": "STTO: Search"
+      },
+      {
+        "command": "readExtend.searchNext",
+        "title": "STTO: Search Next"
+      },
+      {
+        "command": "readExtend.searchPrev",
+        "title": "STTO: Search Previous"
+      }
     ],
     "configuration": {
-      "title": "Read Extend",
+      "title": "STTO",
       "properties": {
         "readExtend.displayLength": {
           "type": "number",
@@ -33,22 +67,52 @@
       }
     },
     "keybindings": [
-      { "command": "readExtend.nextPage", "key": "alt+right", "mac": "alt+right" },
-      { "command": "readExtend.prevPage", "key": "alt+left", "mac": "alt+left" },
-      { "command": "readExtend.toggleVisibility", "key": "alt+h", "mac": "alt+h" },
-      { "command": "readExtend.goToChapter", "key": "alt+c", "mac": "alt+c" },
-      { "command": "readExtend.search", "key": "alt+s", "mac": "alt+s" },
-      { "command": "readExtend.searchNext", "key": "alt+n", "mac": "alt+n" },
-      { "command": "readExtend.searchPrev", "key": "alt+p", "mac": "alt+p" }
+      {
+        "command": "readExtend.nextPage",
+        "key": "alt+right",
+        "mac": "alt+right"
+      },
+      {
+        "command": "readExtend.prevPage",
+        "key": "alt+left",
+        "mac": "alt+left"
+      },
+      {
+        "command": "readExtend.toggleVisibility",
+        "key": "alt+h",
+        "mac": "alt+h"
+      },
+      {
+        "command": "readExtend.goToChapter",
+        "key": "alt+c",
+        "mac": "alt+c"
+      },
+      {
+        "command": "readExtend.search",
+        "key": "alt+s",
+        "mac": "alt+s"
+      },
+      {
+        "command": "readExtend.searchNext",
+        "key": "alt+n",
+        "mac": "alt+n"
+      },
+      {
+        "command": "readExtend.searchPrev",
+        "key": "alt+p",
+        "mac": "alt+p"
+      }
     ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.9.2",
     "typescript": "^5.3.0"
   },
   "dependencies": {
