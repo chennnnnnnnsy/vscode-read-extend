@@ -1,0 +1,5 @@
+out/**
+.claude/**
+.qoder/**
+.cursor/**
+node_modules/**

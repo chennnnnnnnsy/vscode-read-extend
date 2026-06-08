@@ -1,0 +1,57 @@
+{
+  "name": "read-extend",
+  "displayName": "Read Extend",
+  "description": "Read epub/txt books in VSCode status bar",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "readExtend.importBook", "title": "Read Extend: Import Book" },
+      { "command": "readExtend.switchBook", "title": "Read Extend: Switch Book" },
+      { "command": "readExtend.removeBook", "title": "Read Extend: Remove Book" },
+      { "command": "readExtend.nextPage", "title": "Read Extend: Next Page" },
+      { "command": "readExtend.prevPage", "title": "Read Extend: Previous Page" },
+      { "command": "readExtend.toggleVisibility", "title": "Read Extend: Toggle Visibility" },
+      { "command": "readExtend.goToChapter", "title": "Read Extend: Go to Chapter" },
+      { "command": "readExtend.search", "title": "Read Extend: Search" },
+      { "command": "readExtend.searchNext", "title": "Read Extend: Search Next" },
+      { "command": "readExtend.searchPrev", "title": "Read Extend: Search Previous" }
+    ],
+    "configuration": {
+      "title": "Read Extend",
+      "properties": {
+        "readExtend.displayLength": {
+          "type": "number",
+          "default": 50,
+          "description": "Number of characters to display in the status bar"
+        }
+      }
+    },
+    "keybindings": [
+      { "command": "readExtend.nextPage", "key": "alt+right", "mac": "alt+right" },
+      { "command": "readExtend.prevPage", "key": "alt+left", "mac": "alt+left" },
+      { "command": "readExtend.toggleVisibility", "key": "alt+h", "mac": "alt+h" },
+      { "command": "readExtend.goToChapter", "key": "alt+c", "mac": "alt+c" },
+      { "command": "readExtend.search", "key": "alt+s", "mac": "alt+s" },
+      { "command": "readExtend.searchNext", "key": "alt+n", "mac": "alt+n" },
+      { "command": "readExtend.searchPrev", "key": "alt+p", "mac": "alt+p" }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "epub2": "^3.0.2"
+  }
+}
