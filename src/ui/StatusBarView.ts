@@ -21,6 +21,11 @@ export class StatusBarView implements vscode.Disposable {
     }
   }
 
+  hide(): void {
+    this.visible = false;
+    this.statusBarItem.hide();
+  }
+
   toggle(): void {
     this.visible = !this.visible;
     if (this.visible) {

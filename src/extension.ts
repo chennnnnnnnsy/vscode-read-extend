@@ -17,6 +17,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('readExtend.nextPage', () => readerEngine.nextPage()),
     vscode.commands.registerCommand('readExtend.prevPage', () => readerEngine.prevPage()),
     vscode.commands.registerCommand('readExtend.toggleVisibility', () => statusBarView.toggle()),
+    vscode.commands.registerCommand('readExtend.close', () => {
+      readerEngine.close();
+      statusBarView.hide();
+    }),
     vscode.commands.registerCommand('readExtend.goToChapter', () => readerEngine.goToChapter()),
     vscode.commands.registerCommand('readExtend.search', () => readerEngine.search()),
     vscode.commands.registerCommand('readExtend.searchNext', () => readerEngine.searchNext()),

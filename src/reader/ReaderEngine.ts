@@ -225,6 +225,13 @@ export class ReaderEngine {
     vscode.window.showInformationMessage('向前没有更多匹配');
   }
 
+  close(): void {
+    this.book = undefined;
+    this.position = { chapterIndex: 0, charOffset: 0 };
+    this.searchKeyword = '';
+    this.notifyChange();
+  }
+
   clearPosition(filePath: string): void {
     delete this.positions[filePath];
     this.globalState.update(POSITIONS_KEY, this.positions);
