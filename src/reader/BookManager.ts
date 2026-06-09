@@ -55,7 +55,7 @@ export class BookManager {
     }
   }
 
-  async switchBook(readerEngine: ReaderEngine): Promise<void> {
+  async openBook(readerEngine: ReaderEngine): Promise<void> {
     if (this.books.length === 0) {
       vscode.window.showInformationMessage('没有已导入的书籍');
       return;

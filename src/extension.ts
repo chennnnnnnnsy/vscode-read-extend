@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand('readExtend.importBook', () => bookManager.importBook()),
-    vscode.commands.registerCommand('readExtend.switchBook', () => bookManager.switchBook(readerEngine)),
+    vscode.commands.registerCommand('readExtend.openBook', () => bookManager.openBook(readerEngine)),
     vscode.commands.registerCommand('readExtend.removeBook', () => bookManager.removeBook(readerEngine)),
     vscode.commands.registerCommand('readExtend.nextPage', () => readerEngine.nextPage()),
     vscode.commands.registerCommand('readExtend.prevPage', () => readerEngine.prevPage()),
