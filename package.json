@@ -9,7 +9,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -18,7 +20,7 @@
         "title": "STTO: Import Book"
       },
       {
-        "command": "readExtend.switchBook",
+        "command": "readExtend.openBook",
         "title": "STTO: Open Book"
       },
       {
