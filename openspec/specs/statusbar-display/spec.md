@@ -7,6 +7,10 @@ The system SHALL display the current reading content as plain text in the VSCode
 - **WHEN** a book is loaded and the reader is visible
 - **THEN** the status bar item displays a substring of the current chapter's text starting from the current reading position, with length equal to the configured character count
 
+#### Scenario: Click status bar opens chapter list
+- **WHEN** user clicks the status bar reading content
+- **THEN** the system opens the "Go to Chapter" QuickPick
+
 ### Requirement: Configurable display character count
 The system SHALL provide a configuration option `readExtend.displayLength` to set the number of characters displayed at once. The default value SHALL be 50.
 

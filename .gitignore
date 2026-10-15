@@ -3,5 +3,4 @@ out/**
 .qoder/**
 .cursor/**
 node_modules/**
-STTO-*
 .DS_store

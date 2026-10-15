@@ -7,6 +7,10 @@ The system SHALL provide a command to display all chapters of the current book i
 - **WHEN** user executes the "Go to Chapter" command
 - **THEN** the system displays a QuickPick with all chapter titles of the current book
 
+#### Scenario: Default to current chapter
+- **WHEN** user opens the chapter QuickPick while reading a book
+- **THEN** the currently reading chapter is the active (highlighted) item in the list
+
 ### Requirement: Jump to chapter
 The system SHALL allow the user to select a chapter from the list and jump the reading position to the beginning of that chapter.
 

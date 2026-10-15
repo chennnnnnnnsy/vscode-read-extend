@@ -7,7 +7,7 @@ export class StatusBarView implements vscode.Disposable {
 
   constructor(private readerEngine: ReaderEngine) {
     this.statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
-    this.statusBarItem.command = 'readExtend.nextPage';
+    this.statusBarItem.command = 'readExtend.goToChapter';
     this.update();
     this.statusBarItem.show();
   }

@@ -141,13 +141,31 @@ export class ReaderEngine {
       return;
     }
 
-    const items = this.book.chapters.map((ch, i) => ({
+    type ChapterItem = vscode.QuickPickItem & { index: number };
+    const items: ChapterItem[] = this.book.chapters.map((ch, i) => ({
       label: ch.title,
       description: `${i + 1}/${this.book!.chapters.length}`,
       index: i,
     }));
 
-    const selected = await vscode.window.showQuickPick(items, { placeHolder: '选择章节' });
+    const quickPick = vscode.window.createQuickPick<ChapterItem>();
+    quickPick.items = items;
+    quickPick.placeholder = '选择章节';
+    const current = items[this.position.chapterIndex];
+    if (current) {
+      quickPick.activeItems = [current];
+    }
+
+    const selected = await new Promise<ChapterItem | undefined>((resolve) => {
+      quickPick.onDidAccept(() => {
+        resolve(quickPick.selectedItems[0] ?? quickPick.activeItems[0]);
+        quickPick.hide();
+      });
+      quickPick.onDidHide(() => resolve(undefined));
+      quickPick.show();
+    });
+    quickPick.dispose();
+
     if (selected) {
       this.position.chapterIndex = selected.index;
       this.position.charOffset = 0;
